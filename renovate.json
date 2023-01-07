@@ -1,7 +1,7 @@
 {
    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
    "extends": [ "config:base", ":semanticCommitType(fix)" ],
-   "labels": ["dependencies"],
+   "labels": ["dependencies", "bot"],
    "hostRules": [
       {
          "matchHost": "api.github.com",
