@@ -15,8 +15,6 @@ jobs:
           npm install
       - run: |
           npm run all
-      - run: |
-          ls
       - uses: actions/upload-artifact@v2
         with:
           name: my-artifact
@@ -30,8 +28,6 @@ jobs:
         with:
           name: my-artifact
           path: ./dist
-      - run: |
-          ls
       - uses: ./
         with:
           milliseconds: 1000
