@@ -4,6 +4,7 @@
   "private": true,
   "description": "C# Coverage action using various tools",
   "main": "lib/main.js",
+  "test": "npm run all",
   "scripts": {
     "build": "tsc",
     "format": "prettier --write ./**/*.ts",
