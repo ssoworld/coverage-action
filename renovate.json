@@ -17,7 +17,14 @@
          "*"
        ],
        "matchUpdateTypes": [ "minor", "patch" ]
-     }
+     },
+     {
+      "description": "Ignore nodejs",
+      "matchPackageNames": ["node"],
+      "matchManagers": ["npm"],
+      "matchDepTypes": [ "engines" ],
+      "dependencyDashboardApproval": true
+    }
    ],
    "semanticCommits": "enabled"
  }
