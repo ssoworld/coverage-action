@@ -1,4 +1,4 @@
-name: 'Your name here'
+name: 'coverage-action'
 description: 'Provide a description here'
 author: 'Your name or organization here'
 inputs:
@@ -7,5 +7,5 @@ inputs:
     description: 'input description here'
     default: 'default value if applicable'
 runs:
-  using: 'node16'
+  using: 'node20'
   main: 'dist/index.js'
