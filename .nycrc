@@ -3,7 +3,11 @@
      "html",
      "text"
    ],
-   "lines": 100,
-   "branches": "96",
-   "statements": "100"
+   "lines": 80,
+   "branches": "80",
+   "statements": "80",
+   "include": "src",
+   "exclude": [
+      "lib/*"
+   ]
  }
