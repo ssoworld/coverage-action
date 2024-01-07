@@ -27,8 +27,8 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: my-artifact
+      - run: |
+          ls
       - uses: ./
         with:
           milliseconds: 1000
-      - run: |
-          ls
