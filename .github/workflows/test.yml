@@ -47,7 +47,7 @@ jobs:
           node-version-file: '.nvmrc'
 
       - name: Unarchive the .dist directory
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: my-artifact
           path: ./dist
