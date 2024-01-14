@@ -21,10 +21,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set Node.js 18.x
+      - name: Set Node.js from .nvmrc
         uses: actions/setup-node@v4
         with:
-          node-version: 18.x
+          node-version-file: '.nvmrc'
 
       - name: Install dependencies
         run: npm ci

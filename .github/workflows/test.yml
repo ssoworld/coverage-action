@@ -10,13 +10,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: |
+
+      - name: Set Node.js from .nvmrc
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+      
+      - name: Install dependencies
+        run: |
           npm install
-      - run: |
+
+      - name: run the tests
+        run: |
           npm run all
-      - run:
+
+      - name: show output files
+        run: |
           ls -R
-      - uses: actions/upload-artifact@v3
+
+      - name: archive .dist directory
+        uses: actions/upload-artifact@v3
         with:
           name: my-artifact
           path: ./dist
@@ -24,13 +37,26 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/download-artifact@v3
+      - name: checkout the repo
+        uses: actions/checkout@v4
+
+
+      - name: Set Node.js from .nvmrc
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: Unarchive the .dist directory
+        uses: actions/download-artifact@v3
         with:
           name: my-artifact
           path: ./dist
-      - run:
+      
+      - name: show the files to verify it is placed
+        run:
           ls -R
-      - uses: ./
+      
+      - name: run the action to test it
+        uses: ./
         with:
           milliseconds: 1000
