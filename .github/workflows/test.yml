@@ -29,10 +29,10 @@ jobs:
           ls -R
 
       - name: archive .dist directory
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: my-artifact
-          path: ./dist
+          path: ~/dist
   test: # make sure the action works on a clean machine without building
     runs-on: ubuntu-latest
     needs: build
@@ -47,10 +47,10 @@ jobs:
           node-version-file: '.nvmrc'
 
       - name: Unarchive the .dist directory
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: my-artifact
-          path: ./dist
+          path: ~/dist
       
       - name: show the files to verify it is placed
         run:
