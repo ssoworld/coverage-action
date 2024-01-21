@@ -26,6 +26,7 @@ jobs:
 
       - name: show output files
         run: |
+          pwd
           ls -R
 
       - name: archive .dist directory
