@@ -28,7 +28,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@actions/core": "1.11.0",
+    "@actions/core": "1.11.1",
     "@semantic-release/git": "^10.0.1",
     "c8": "^10.0.0",
     "no-save": "^1.0.0"
