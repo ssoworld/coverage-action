@@ -52,7 +52,7 @@
     "prettier": "3.6.2",
     "semantic-release": "24.2.8",
     "tar": "^7.0.0",
-    "ts-jest": "29.4.1",
+    "ts-jest": "29.4.2",
     "typescript": "5.9.2",
     "undici": "^7.0.0"
   }
