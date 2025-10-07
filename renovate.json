@@ -1,30 +1,28 @@
 {
-   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-   "extends": [ "config:base", ":semanticCommitType(fix)" ],
-   "labels": ["dependencies", "bot"],
-   "hostRules": [
-      {
-         "matchHost": "api.github.com",
-         "concurrentRequestLimit": 2
-      }
-   ],
-   "packageRules": [
-     {
-       "automerge": true,
-       "groupName": "Minor and Patch dependencies",
-       "groupSlug": "all",
-       "matchPackagePatterns": [
-         "*"
-       ],
-       "matchUpdateTypes": [ "minor", "patch" ]
-     },
-     {
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended", ":semanticCommitType(fix)"],
+  "labels": ["dependencies", "bot"],
+  "hostRules": [
+    {
+      "matchHost": "api.github.com",
+      "concurrentRequestLimit": 2
+    }
+  ],
+  "packageRules": [
+    {
+      "automerge": true,
+      "groupName": "Minor and Patch dependencies",
+      "groupSlug": "all",
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchPackageNames": ["*"]
+    },
+    {
       "description": "Ignore nodejs",
       "matchPackageNames": ["node"],
       "matchManagers": ["npm"],
-      "matchDepTypes": [ "engines" ],
+      "matchDepTypes": ["engines"],
       "dependencyDashboardApproval": true
     }
-   ],
-   "semanticCommits": "enabled"
- }
+  ],
+  "semanticCommits": "enabled"
+}
