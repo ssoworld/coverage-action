@@ -30,7 +30,7 @@ jobs:
           ls -R
 
       - name: archive dist directory
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: my-artifact
           path: ./dist/
@@ -48,7 +48,7 @@ jobs:
           node-version-file: '.nvmrc'
 
       - name: Unarchive the .dist directory
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v6
         with:
           name: my-artifact
           path: ./dist/
